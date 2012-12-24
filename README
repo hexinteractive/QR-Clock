@@ -1,0 +1,15 @@
+
+QR Clock is a art piece poking fun at the opaque machine layer that we plaster between people and content.
+
+TODO:
+- use figure and figcaption
+- fix the collapsing face problem
+- make baked in clock face image current
+_ clean up stringMinutes and offset (move offset to date object)
+    - d = new Date( (new Date).valueOf() + (60 * 1000))
+- research sharing methods between node and the browser
+
+URLs:
+- http://www.the-qrcode-generator.com/
+- http://chart.googleapis.com/chart?chf=a,s,000000&chs=280x280&cht=qr&choe=UTF-8&chld=%7C0&chl=CODE-CONTENT-HERE
+- http://stackoverflow.com/questions/3225251/how-can-i-share-code-between-node-js-and-the-browser
