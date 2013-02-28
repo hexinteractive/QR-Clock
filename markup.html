@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+	<link href='http://fonts.googleapis.com/css?family=Roboto:300,900&effect=3d-float' rel='stylesheet' type='text/css'>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<title>QR clock</title>
+	<title>QR Clock</title>
 	<link rel="stylesheet" href="style.css" type="text/css" />
 	<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
 	<script type="text/javascript" src="jcode.js"></script>
@@ -14,14 +15,18 @@
 <div class="clock">
 
 	<div class="face">
-
 		<img src="http://chart.googleapis.com/chart?chf=a,s,000000&chs=280x280&cht=qr&choe=UTF-8&chld=%7C0&chl=QR clock" />
-
-		<span class="seconds" data-seconds="0">45</span>
+		<noscript>
+			<img src="http://chart.googleapis.com/chart?chf=a,s,000000&chs=280x280&cht=qr&choe=UTF-8&chld=%7C0&chl=Sorry, the QR clock requires JavaScript to run" />
+		</noscript>
+		<span class="seconds" data-seconds="0"></span>
 
 	</div>
-
+	<input type="button" class="glass" value="on/off" />
 </div>
+<p class="font-effect-3d-float">
+	The <strong>QR Clock</strong> is an art piece poking fun at the opaque machine layer that we use to connect people and content.
+</p>
 
 </body>
 </html>
