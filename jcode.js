@@ -63,24 +63,27 @@ $(document).ready(function(){
         console.log('sec:mils ', time.seconds +':'+ time.milliseconds);
         // this.imageStore = this.preloadMinuteImage(time.hours +':'+ (time.minutes + offset));
 
+        // var rawHour = time.hours || 12, /* will always equal a positive number between one and twenty-three. this handles 12:34am displaying as 0:34am */
+        //     maxHour = Math.max(0, rawHour-12), /* will always return zero or a positive number less than twelve */
+        //     minHour = Math.min(12, rawHour), /* will always return a positive number between twelve and twenty-three */
+        //     meridian = maxHour - 1 ? 'pm' : 'am', /* if maxHour is zero than the rawHour must be larger than twelve. therefore its pm */
+        //     rawMinute = time.minutes + offset,
+        //     strMinute = '0' + rawMinute, /* adding a leading zero */
+        //     truncStrMinute = strMinute.slice(-2), /* will return the last two digits of the minute string so we will never have 12:3 only 12:03 */
+        //     timeString = (maxHour || minHour) +':'+ truncStrMinute + meridian;
 
-        // TODO: use updated time format code
-        var pm = (time.hours > 12 ? true : false);
-        var stringHours = ( pm ? time.hours - 12 : time.hours);
+        var rawHour = time.hours, /* will return zero through twenty-three */
+            nonZeroTwentyFourHour = rawHour || 12, /* will always equal a positive number between one and twenty-three. this handles 12:34am displaying as 0:34am */
+            maxHour = Math.max(0, nonZeroTwentyFourHour-12), /* will always return zero or a positive number less than twelve */
+            minHour = Math.min(12, nonZeroTwentyFourHour), /* will always return a positive number between twelve and twenty-three */
+            meridian = rawHour < 12 ? 'am' : 'pm',  /* if rawHour is less than twelve then its in the AM */
+            rawMinute = time.minutes + offset,
+            strMinute = '0' + rawMinute, /* adding a leading zero for display */
+            truncStrMinute = strMinute.slice(-2), /* will return the last two digits of the minute string so we will never have 12:3 only 12:03 */
+            timeString = (maxHour || minHour) +':'+ truncStrMinute + meridian;
 
-        if(time.hours == 0) {
-          stringHours = 12;
-        }
-
-        var stringMinutes = time.minutes + offset;
-
-        if(stringMinutes < 10) {
-          stringMinutes = '0' + stringMinutes;
-        }
-
-        var timeString = stringHours + ':' + stringMinutes + (pm ? 'pm' : 'am')
+        this.imageStore = null; /* do i need this? */
         this.imageStore = this.preloadMinuteImage(timeString);
-
       }
 
       if(time.seconds == 0 || force) {

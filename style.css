@@ -1,9 +1,19 @@
 html,
 body{
-  font-family:arial,verdana,sans-serif; margin:0; padding:0;
-	color:#333;
-  text-align: center;
-  background: url("noise.png") repeat scroll 0 0 deepskyblue;
+    font-family:arial,verdana,sans-serif; margin:0; padding:0;
+    color:#333;
+    text-align: center;
+    min-height: 100%;
+  /*background: url("noise.png") repeat scroll 0 0 deepskyblue;*/
+}
+
+body {
+    background: url("noise.png") repeat scroll 0 0 deepskyblue;
+    background-image: url("noise.png"), -webkit-linear-gradient(#00CFFF, #00BFFF, #00AFEF); /* For Chrome and Safari */
+    background-image: url("noise.png"),    -moz-linear-gradient(#00CFFF, #00BFFF, #00AFEF); /* For old Fx (3.6 to 15) */
+    background-image: url("noise.png"),     -ms-linear-gradient(#00CFFF, #00BFFF, #00AFEF); /* For pre-releases of IE 10*/
+    background-image: url("noise.png"),         linear-gradient(#00CFFF, #00BFFF, #00AFEF);
+    padding-bottom: 1px;
 }
 
 /*.pixelated {
@@ -158,6 +168,7 @@ input[type="button"].glass {
     padding: 0;
     position: absolute;
     width: 5%;
+    /*cursor: pointer;*/
 }
 
 /*not sure if I want this... */
@@ -187,13 +198,15 @@ p {
     color: #FFFDEE;
     font-family: 'Roboto',sans-serif;
     font-size: 30px;
-    margin: 1em auto 8em auto;
-    padding-left: 1em;
+  /*margin: 1em auto 8em auto;*/
+    margin: 1em auto 2em auto;
+    padding-bottom: 1.33em;
     text-align: left;
     text-align: justify;
     width: 520px;
     font-weight: 300;
     position: relative;
+    cursor: default;
 }
 p strong {
     font-weight: 900;
@@ -202,10 +215,6 @@ p strong {
 p:after {
     content: '–enjoy';
     position: absolute;
-    top:100%;
+    bottom: 0%;
     right: 0;
-    margin-top: 0.5em;
-    text-align: right;
-
-
 }

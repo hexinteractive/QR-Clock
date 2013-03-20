@@ -1,7 +1,9 @@
 
+Statement:
 QR Clock is a art piece poking fun at the opaque machine layer that we plaster between people and content.
-QR Clock is an art piece poking fun at the opaque machine layer that we use to connect people and content.
-
+The QR Clock is an art piece poking fun at the opaque machine layer that we use to connect people and content.
+The QR Clock is an artistic experiment poking fun at the opaque machine layer that we use to connect people and content.
+The QR Clock is an artistic experiment poking fun at the opaque machine layer that the interface between people and content.
 
 TODO:
 - use figure and figcaption
@@ -10,23 +12,12 @@ _ clean up stringMinutes and offset (move offset to date object)
     - d = new Date( (new Date).valueOf() + (60 * 1000))
 - research sharing methods between Node and the browser
 - listen for image.onerror and retry getting the image
-- use updated time format code
-    // var formateDate = function(d){
-    //   var time = function(d){
-    //   var rawHour = d.getHours(),
-    //       maxHour = Math.max(0, rawHour-12),
-    //       minHour = Math.min(12, rawHour),
-    //       meridian = maxHour ? 'pm' : 'am',
-    //       rawMinute = d.getMinutes(),
-    //       strMinute = '0' + rawMinute,
-    //       truncStrMinute = strMinute.substr(-2);
-    //   return (maxHour || minHour) +':'+ truncStrMinute + meridian;
-    // };
 - wire up the power button to toggle stop()/run()
-
+- confirm that unused image objects are being destroyed.
 
 URLs:
 - http://www.the-qrcode-generator.com/
 - http://chart.googleapis.com/chart?chf=a,s,000000&chs=280x280&cht=qr&choe=UTF-8&chld=%7C0&chl=CODE-CONTENT-HERE
 - http://stackoverflow.com/questions/3225251/how-can-i-share-code-between-node-js-and-the-browser
 - https://developers.google.com/webfonts/docs/getting_started
+- https://github.com/pivotal/jasmine/wiki/Matchers
